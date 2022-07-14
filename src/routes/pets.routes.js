@@ -22,5 +22,9 @@ router.post(
 );
 router.put("/:id", authMiddleware, upload.array("photos"), updatePets);
 router.delete("/:id", authMiddleware, deletePets);
+router.post("/notif", (req, res) => {
+  console.log('notif', req.body);
+  return res.send(req.body);
+});
 
 export default router;
